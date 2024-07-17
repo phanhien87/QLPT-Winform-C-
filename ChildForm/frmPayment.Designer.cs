@@ -45,6 +45,10 @@
             btnConfirm = new Button();
             label2 = new Label();
             grpContent = new GroupBox();
+            txtUP = new Label();
+            label9 = new Label();
+            txtAProom = new TextBox();
+            label4 = new Label();
             btnconfirmAndCo = new Button();
             lblAccPay = new Label();
             label19 = new Label();
@@ -81,7 +85,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(96, 244);
+            label3.Location = new Point(96, 227);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 18;
@@ -92,7 +96,7 @@
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources.i2;
-            pictureBox2.Location = new Point(1264, 3);
+            pictureBox2.Location = new Point(1242, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(20, 20);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -104,7 +108,7 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources.i2;
-            pictureBox1.Location = new Point(1724, 4);
+            pictureBox1.Location = new Point(1702, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(20, 20);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -127,7 +131,7 @@
             ptbState.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbState.Cursor = Cursors.Hand;
             ptbState.Image = Properties.Resources.maxx;
-            ptbState.Location = new Point(2288, 7);
+            ptbState.Location = new Point(2266, 7);
             ptbState.Name = "ptbState";
             ptbState.Size = new Size(20, 20);
             ptbState.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -139,7 +143,7 @@
             panelLeft.Dock = DockStyle.Left;
             panelLeft.Location = new Point(3, 43);
             panelLeft.Name = "panelLeft";
-            panelLeft.Size = new Size(10, 310);
+            panelLeft.Size = new Size(10, 337);
             panelLeft.TabIndex = 12;
             // 
             // ptbClose
@@ -147,7 +151,7 @@
             ptbClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbClose.Cursor = Cursors.Hand;
             ptbClose.Image = Properties.Resources.i2;
-            ptbClose.Location = new Point(2314, 7);
+            ptbClose.Location = new Point(2292, 7);
             ptbClose.Name = "ptbClose";
             ptbClose.Size = new Size(20, 20);
             ptbClose.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -177,7 +181,7 @@
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(3, 19);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(706, 24);
+            panelTop.Size = new Size(684, 24);
             panelTop.TabIndex = 13;
             // 
             // pictureBox3
@@ -185,7 +189,7 @@
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = Properties.Resources.close;
-            pictureBox3.Location = new Point(680, 1);
+            pictureBox3.Location = new Point(658, 1);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(20, 20);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -198,7 +202,7 @@
             ptbMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbMinimize.Cursor = Cursors.Hand;
             ptbMinimize.Image = Properties.Resources.min;
-            ptbMinimize.Location = new Point(2262, 7);
+            ptbMinimize.Location = new Point(2240, 7);
             ptbMinimize.Name = "ptbMinimize";
             ptbMinimize.Size = new Size(20, 20);
             ptbMinimize.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -208,17 +212,17 @@
             // panelRight
             // 
             panelRight.Dock = DockStyle.Right;
-            panelRight.Location = new Point(709, 19);
+            panelRight.Location = new Point(687, 19);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(10, 334);
+            panelRight.Size = new Size(10, 361);
             panelRight.TabIndex = 11;
             // 
             // panelBottom
             // 
             panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(3, 353);
+            panelBottom.Location = new Point(3, 380);
             panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(716, 10);
+            panelBottom.Size = new Size(694, 10);
             panelBottom.TabIndex = 14;
             // 
             // btnCancle
@@ -226,7 +230,7 @@
             btnCancle.BackColor = Color.Gray;
             btnCancle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCancle.ForeColor = SystemColors.ControlLightLight;
-            btnCancle.Location = new Point(515, 293);
+            btnCancle.Location = new Point(515, 329);
             btnCancle.Name = "btnCancle";
             btnCancle.Size = new Size(87, 23);
             btnCancle.TabIndex = 10;
@@ -239,7 +243,7 @@
             btnConfirm.BackColor = Color.Gray;
             btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnConfirm.ForeColor = SystemColors.ControlLightLight;
-            btnConfirm.Location = new Point(159, 293);
+            btnConfirm.Location = new Point(159, 329);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(172, 23);
             btnConfirm.TabIndex = 5;
@@ -261,6 +265,10 @@
             // grpContent
             // 
             grpContent.BackColor = Color.DimGray;
+            grpContent.Controls.Add(txtUP);
+            grpContent.Controls.Add(label9);
+            grpContent.Controls.Add(txtAProom);
+            grpContent.Controls.Add(label4);
             grpContent.Controls.Add(btnconfirmAndCo);
             grpContent.Controls.Add(lblAccPay);
             grpContent.Controls.Add(label19);
@@ -294,17 +302,60 @@
             grpContent.Dock = DockStyle.Fill;
             grpContent.Location = new Point(0, 0);
             grpContent.Name = "grpContent";
-            grpContent.Size = new Size(722, 366);
+            grpContent.Size = new Size(700, 393);
             grpContent.TabIndex = 15;
             grpContent.TabStop = false;
             grpContent.Enter += grpContent_Enter;
+            // 
+            // txtUP
+            // 
+            txtUP.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtUP.ForeColor = SystemColors.ControlLightLight;
+            txtUP.Location = new Point(475, 275);
+            txtUP.Name = "txtUP";
+            txtUP.Size = new Size(128, 15);
+            txtUP.TabIndex = 44;
+            txtUP.Text = "0";
+            txtUP.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label9.ForeColor = SystemColors.ControlLightLight;
+            label9.Location = new Point(366, 275);
+            label9.Name = "label9";
+            label9.Size = new Size(77, 15);
+            label9.TabIndex = 43;
+            label9.Text = "Required UP";
+            // 
+            // txtAProom
+            // 
+            txtAProom.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtAProom.Location = new Point(195, 272);
+            txtAProom.Name = "txtAProom";
+            txtAProom.Size = new Size(128, 23);
+            txtAProom.TabIndex = 42;
+            txtAProom.Text = "0";
+            txtAProom.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(97, 275);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 15);
+            label4.TabIndex = 41;
+            label4.Text = "AP Room";
             // 
             // btnconfirmAndCo
             // 
             btnconfirmAndCo.BackColor = Color.Gray;
             btnconfirmAndCo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnconfirmAndCo.ForeColor = SystemColors.ControlLightLight;
-            btnconfirmAndCo.Location = new Point(337, 293);
+            btnconfirmAndCo.Location = new Point(337, 329);
             btnconfirmAndCo.Name = "btnconfirmAndCo";
             btnconfirmAndCo.Size = new Size(172, 23);
             btnconfirmAndCo.TabIndex = 40;
@@ -352,9 +403,9 @@
             label17.ForeColor = SystemColors.ControlLightLight;
             label17.Location = new Point(96, 188);
             label17.Name = "label17";
-            label17.Size = new Size(69, 15);
+            label17.Size = new Size(91, 15);
             label17.TabIndex = 36;
-            label17.Text = "Debit Price";
+            label17.Text = "Old Debit Price";
             // 
             // lblNameRoom
             // 
@@ -386,9 +437,9 @@
             label16.ForeColor = SystemColors.ControlLightLight;
             label16.Location = new Point(366, 159);
             label16.Name = "label16";
-            label16.Size = new Size(65, 15);
+            label16.Size = new Size(94, 15);
             label16.TabIndex = 33;
-            label16.Text = "Total Price";
+            label16.Text = "Total Price Now";
             // 
             // lblccPrice
             // 
@@ -483,7 +534,7 @@
             // txtPayment
             // 
             txtPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtPayment.Location = new Point(194, 241);
+            txtPayment.Location = new Point(194, 224);
             txtPayment.Name = "txtPayment";
             txtPayment.Size = new Size(128, 23);
             txtPayment.TabIndex = 24;
@@ -517,7 +568,7 @@
             // 
             lblRemainder.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblRemainder.ForeColor = SystemColors.ControlLightLight;
-            lblRemainder.Location = new Point(474, 244);
+            lblRemainder.Location = new Point(474, 227);
             lblRemainder.Name = "lblRemainder";
             lblRemainder.Size = new Size(128, 15);
             lblRemainder.TabIndex = 21;
@@ -529,7 +580,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(366, 244);
+            label6.Location = new Point(366, 227);
             label6.Name = "label6";
             label6.Size = new Size(68, 15);
             label6.TabIndex = 20;
@@ -539,7 +590,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(722, 366);
+            ClientSize = new Size(700, 393);
             Controls.Add(grpContent);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmPayment";
@@ -602,5 +653,9 @@
         private Label lblDebit;
         private Label label17;
         private Button btnconfirmAndCo;
+        private TextBox txtAProom;
+        private Label label4;
+        private Label txtUP;
+        private Label label9;
     }
 }

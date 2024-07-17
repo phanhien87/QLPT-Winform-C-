@@ -14,7 +14,7 @@ namespace Ass_prn_QLPT.ChildForm
     {
         private string idThuePhong;
         private Database db;
-        private int csdcu, csncu;
+        private int csdcu, csncu,aproom;
         DataRow dt;
         public frmPayment(string id)
         {
@@ -38,7 +38,7 @@ namespace Ass_prn_QLPT.ChildForm
         {
 
         }
-
+        int tongtienphaitra = 0;
         private void loadPayMent()
         {
             db = new Database();
@@ -60,14 +60,18 @@ namespace Ass_prn_QLPT.ChildForm
             lblEprice.Text = string.Format("{0:N0} VND", int.Parse(dt["TienDien"].ToString()));
             lblWifi.Text = string.Format("{0:N0} VND", int.Parse(dt["TienMang"].ToString()));
             lblccPrice.Text = string.Format("{0:N0} VND", int.Parse(dt["TienVS"].ToString()));
-            lblAccPay.Text = string.Format("{0:N0} VND", int.Parse(dt["TongTienPhaiTra"].ToString()));
-            lblDebit.Text = string.Format("{0:N0} VND", int.Parse(dt["SoNoPhaiTra"].ToString()));
-            lblTotalPrice.Text = string.Format("{0:N0} VND", int.Parse(dt["Total"].ToString()));
+            lblAccPay.Text = string.Format("{0:N0} VND", int.Parse(dt["SoNoTruoc"].ToString()) + int.Parse(dt["TongTienHienTai"].ToString()));
+            lblDebit.Text = string.Format("{0:N0} VND", int.Parse(dt["SoNoTruoc"].ToString()));
+            lblTotalPrice.Text = string.Format("{0:N0} VND", int.Parse(dt["TongTienHienTai"].ToString()));
+             tongtienphaitra = int.Parse(dt["SoNoTruoc"].ToString()) + int.Parse(dt["TongTienHienTai"].ToString());
+            aproom = int.Parse(dt["GiaPhong"].ToString()) * int.Parse(dt["sothang"].ToString());
+            txtUP.Text = string.Format("{0:N0} VND", aproom);
+           
         }
 
         private void txtPayment_KeyUp(object sender, KeyEventArgs e)
         {
-            lblRemainder.Text = string.Format("{0:N0} VND", int.Parse(dt["TongTienPhaiTra"].ToString()) - int.Parse(txtPayment.Text));
+            lblRemainder.Text = string.Format("{0:N0} VND",tongtienphaitra - int.Parse(txtPayment.Text));
         }
 
         private void txtPayment_KeyPress(object sender, KeyPressEventArgs e)
@@ -82,16 +86,22 @@ namespace Ass_prn_QLPT.ChildForm
         {
             
             db = new Database();
+            if(
+                int.Parse(txtAProom.Text) > aproom   )
+            {
+                MessageBox.Show("Your payment need less than required upfront payment!", "hehe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Dispose();
+            }
             var list = new List<CustomerParameter>()
             {
                 new CustomerParameter()
                 {
-                    key = "id",
+                    key = "@id",
                     value = idThuePhong
                 },
                 new CustomerParameter()
                 {
-                    key = "money",
+                    key = "@money",
                     value = txtPayment.Text
                 }
             };
@@ -132,10 +142,15 @@ namespace Ass_prn_QLPT.ChildForm
                     },
                     new CustomerParameter()
                     {
-                        key = "@total",
-                        value = dt["Total"].ToString()
+                        key="@up",
+                        value =  dt["TienTraPhongTrc"].ToString()
                     },
-                    
+                    new CustomerParameter()
+                    {
+                        key = "@total",
+                        value = tongtienphaitra.ToString()
+                    },
+
                 };
                 if (db.ExeCute("Bill", listKH) >= 1) {
                     var list2 = new List<CustomerParameter>()
@@ -144,6 +159,11 @@ namespace Ass_prn_QLPT.ChildForm
                     {
                         key = "@id",
                         value = idThuePhong
+                    },
+                    new CustomerParameter()
+                    {
+                        key = "@money",
+                        value = txtAProom.Text
                     }
                 };
                     var rs2 = db.ExeCute("Extend", list2);
@@ -197,7 +217,7 @@ namespace Ass_prn_QLPT.ChildForm
         {
             string[] money = lblAccPay.Text.Split(' ');
             new FrmCheck_out(idThuePhong, int.Parse(money[0].Replace(",", "")), dt["TienDien"].ToString(), dt["TienNuoc"].ToString()
-                , dt["TienMang"].ToString(), dt["TienVS"].ToString(), dt["Total"].ToString()).ShowDialog();
+                , dt["TienMang"].ToString(), dt["TienVS"].ToString(), tongtienphaitra.ToString(), dt["TienTraPhongTrc"].ToString()).ShowDialog();
         }
     }
 }

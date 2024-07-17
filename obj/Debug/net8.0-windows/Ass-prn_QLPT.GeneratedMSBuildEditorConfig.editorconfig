@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ass_prn_QLPT
-build_property.ProjectDir = E:\C#\Ass-prn_QLPT\
+build_property.ProjectDir = E:\C#\Ass-prn_QLPT\QLPT-Winform-C-\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

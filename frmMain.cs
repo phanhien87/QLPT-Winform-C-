@@ -18,10 +18,13 @@ namespace Ass_prn_QLPT
         public Form1()
         {
             InitializeComponent();
+            var log = new frmLogin();
+            log.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             var f = new frmWelcome();
             AddForm(f);
         }
@@ -47,14 +50,14 @@ namespace Ass_prn_QLPT
             {
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
-                ptbState.Image = Properties.Resources.normal1;
+                ptbState.Image = Properties.Resources.res;
 
 
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
-                ptbState.Image = Properties.Resources.maxx;
+                ptbState.Image = Properties.Resources.maxi;
             }
         }
 
@@ -72,7 +75,7 @@ namespace Ass_prn_QLPT
 
         }
 
-        private void AddForm(Form form)
+        public void AddForm(Form form)
         {
             this.grpContent.Controls.Clear();
             form.TopLevel = false;
@@ -128,7 +131,7 @@ namespace Ass_prn_QLPT
 
         private void dichvuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panelRight_Paint(object sender, PaintEventArgs e)
@@ -151,6 +154,31 @@ namespace Ass_prn_QLPT
         private void thoátToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             var f = new frmService();
+            AddForm(f);
+        }
+
+        private void thoátToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            var log = new frmLogin();
+            log.ShowDialog();
+
+        }
+
+        private void lịchSửToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new History();
+            AddForm(f);
+        }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddForm(f);
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new RestPassword();
             AddForm(f);
         }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#\\Ass-prn_QLPT\\Ass-prn_QLPT.csproj": {}
+    "E:\\C#\\Ass-prn_QLPT\\QLPT-Winform-C-\\Ass-prn_QLPT.csproj": {}
   },
   "projects": {
-    "E:\\C#\\Ass-prn_QLPT\\Ass-prn_QLPT.csproj": {
+    "E:\\C#\\Ass-prn_QLPT\\QLPT-Winform-C-\\Ass-prn_QLPT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#\\Ass-prn_QLPT\\Ass-prn_QLPT.csproj",
+        "projectUniqueName": "E:\\C#\\Ass-prn_QLPT\\QLPT-Winform-C-\\Ass-prn_QLPT.csproj",
         "projectName": "Ass-prn_QLPT",
-        "projectPath": "E:\\C#\\Ass-prn_QLPT\\Ass-prn_QLPT.csproj",
+        "projectPath": "E:\\C#\\Ass-prn_QLPT\\QLPT-Winform-C-\\Ass-prn_QLPT.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\Ass-prn_QLPT\\obj\\",
+        "outputPath": "E:\\C#\\Ass-prn_QLPT\\QLPT-Winform-C-\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

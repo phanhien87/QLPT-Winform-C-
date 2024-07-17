@@ -49,6 +49,11 @@ namespace Ass_prn_QLPT.ChildForm
             var dt = db.SelectData("LoadRoom", list);
             dgvRoom.ForeColor = Color.Black;
             dgvRoom.DataSource = dt;
+            var dtSP = db.SelectData("statisticRoom");
+            lblFull.Text = dtSP.Rows[1]["Room"].ToString();
+            lblReady.Text = dtSP.Rows[0]["Room"].ToString();
+            txtNote.Text = dtSP.Rows[2]["Room"].ToString();
+            lblTotal.Text = (int.Parse(dtSP.Rows[1]["Room"].ToString()) + int.Parse(dtSP.Rows[0]["Room"].ToString())).ToString();
         }
 
         private void frmRoom_Load(object sender, EventArgs e)
@@ -72,15 +77,21 @@ namespace Ass_prn_QLPT.ChildForm
 
         private void dgvRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 
         private void dgvRoom_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            var rentedRoom = dgvRoom.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+            if (rentedRoom.ToLower().Equals("full"))
+            {
+                MessageBox.Show("Room is being full!!","hehe",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+            }
             var idRoom = dgvRoom.Rows[e.RowIndex].Cells["ID"].Value.ToString();
 
-           new frmForRoom(idRoom).ShowDialog();
+            new frmForRoom(idRoom).ShowDialog();
 
             loadroom();
 
@@ -93,7 +104,7 @@ namespace Ass_prn_QLPT.ChildForm
                 MessageBox.Show("Please, choose one to delete!", "hehe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (MessageBox.Show("Do you want change to "+ btnDeleteRoom.Text.ToLower() +" for room " + dgvRoom.Rows[rowindext].Cells["tenphong"].Value.ToString()+"?", "hehe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want change to " + btnDeleteRoom.Text.ToLower() + " for room " + dgvRoom.Rows[rowindext].Cells["tenphong"].Value.ToString() + "?", "hehe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var list = new List<CustomerParameter>() {
 
@@ -120,7 +131,17 @@ namespace Ass_prn_QLPT.ChildForm
         private void dgvRoom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rowindext = e.RowIndex;
-            
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNote_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,6 +42,10 @@
             ptbMinimize = new PictureBox();
             panelLeft = new Panel();
             grpContent = new GroupBox();
+            lblTotalprice = new Label();
+            label12 = new Label();
+            txttTraTienphong = new TextBox();
+            label11 = new Label();
             txtWifiFee = new TextBox();
             txtCCfee = new TextBox();
             label9 = new Label();
@@ -73,7 +77,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(76, 110);
+            label2.Location = new Point(110, 99);
             label2.Name = "label2";
             label2.Size = new Size(76, 15);
             label2.TabIndex = 3;
@@ -84,7 +88,7 @@
             btnConfirm.BackColor = Color.Gray;
             btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnConfirm.ForeColor = SystemColors.ControlLightLight;
-            btnConfirm.Location = new Point(381, 274);
+            btnConfirm.Location = new Point(415, 312);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(87, 23);
             btnConfirm.TabIndex = 5;
@@ -97,7 +101,7 @@
             btnCancle.BackColor = Color.Gray;
             btnCancle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCancle.ForeColor = SystemColors.ControlLightLight;
-            btnCancle.Location = new Point(474, 274);
+            btnCancle.Location = new Point(508, 312);
             btnCancle.Name = "btnCancle";
             btnCancle.Size = new Size(87, 23);
             btnCancle.TabIndex = 10;
@@ -217,6 +221,10 @@
             // 
             // grpContent
             // 
+            grpContent.Controls.Add(lblTotalprice);
+            grpContent.Controls.Add(label12);
+            grpContent.Controls.Add(txttTraTienphong);
+            grpContent.Controls.Add(label11);
             grpContent.Controls.Add(txtWifiFee);
             grpContent.Controls.Add(txtCCfee);
             grpContent.Controls.Add(label9);
@@ -249,10 +257,54 @@
             grpContent.TabIndex = 14;
             grpContent.TabStop = false;
             // 
+            // lblTotalprice
+            // 
+            lblTotalprice.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblTotalprice.ForeColor = SystemColors.ControlLightLight;
+            lblTotalprice.Location = new Point(467, 270);
+            lblTotalprice.Name = "lblTotalprice";
+            lblTotalprice.Size = new Size(128, 15);
+            lblTotalprice.TabIndex = 36;
+            lblTotalprice.Text = "0";
+            lblTotalprice.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label12.ForeColor = SystemColors.ControlLightLight;
+            label12.Location = new Point(350, 270);
+            label12.Name = "label12";
+            label12.Size = new Size(34, 15);
+            label12.TabIndex = 35;
+            label12.Text = "Total";
+            // 
+            // txttTraTienphong
+            // 
+            txttTraTienphong.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txttTraTienphong.Location = new Point(213, 267);
+            txttTraTienphong.Name = "txttTraTienphong";
+            txttTraTienphong.Size = new Size(128, 23);
+            txttTraTienphong.TabIndex = 34;
+            txttTraTienphong.Text = "0";
+            txttTraTienphong.TextAlign = HorizontalAlignment.Right;
+            txttTraTienphong.KeyUp += textBox1_KeyUp;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label11.ForeColor = SystemColors.ControlLightLight;
+            label11.Location = new Point(111, 270);
+            label11.Name = "label11";
+            label11.Size = new Size(101, 15);
+            label11.TabIndex = 33;
+            label11.Text = "Total Room Price\r\n";
+            // 
             // txtWifiFee
             // 
             txtWifiFee.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtWifiFee.Location = new Point(436, 237);
+            txtWifiFee.Location = new Point(470, 226);
             txtWifiFee.Name = "txtWifiFee";
             txtWifiFee.Size = new Size(125, 23);
             txtWifiFee.TabIndex = 32;
@@ -262,7 +314,7 @@
             // txtCCfee
             // 
             txtCCfee.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtCCfee.Location = new Point(179, 237);
+            txtCCfee.Location = new Point(213, 226);
             txtCCfee.Name = "txtCCfee";
             txtCCfee.Size = new Size(128, 23);
             txtCCfee.TabIndex = 31;
@@ -274,7 +326,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(316, 240);
+            label9.Location = new Point(350, 229);
             label9.Name = "label9";
             label9.Size = new Size(53, 15);
             label9.TabIndex = 30;
@@ -285,7 +337,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label10.ForeColor = SystemColors.ControlLightLight;
-            label10.Location = new Point(77, 240);
+            label10.Location = new Point(111, 229);
             label10.Name = "label10";
             label10.Size = new Size(44, 15);
             label10.TabIndex = 29;
@@ -294,7 +346,7 @@
             // txten
             // 
             txten.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txten.Location = new Point(436, 204);
+            txten.Location = new Point(470, 193);
             txten.Name = "txten";
             txten.Size = new Size(125, 23);
             txten.TabIndex = 28;
@@ -304,7 +356,7 @@
             // txtwn
             // 
             txtwn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtwn.Location = new Point(179, 204);
+            txtwn.Location = new Point(213, 193);
             txtwn.Name = "txtwn";
             txtwn.Size = new Size(128, 23);
             txtwn.TabIndex = 27;
@@ -316,7 +368,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ControlLightLight;
-            label8.Location = new Point(316, 207);
+            label8.Location = new Point(350, 196);
             label8.Name = "label8";
             label8.Size = new Size(111, 15);
             label8.TabIndex = 26;
@@ -327,7 +379,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(77, 207);
+            label7.Location = new Point(111, 196);
             label7.Name = "label7";
             label7.Size = new Size(91, 15);
             label7.TabIndex = 25;
@@ -338,7 +390,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(316, 179);
+            label6.Location = new Point(350, 168);
             label6.Name = "label6";
             label6.Size = new Size(94, 15);
             label6.TabIndex = 24;
@@ -346,15 +398,17 @@
             // 
             // dtpCheckOut
             // 
-            dtpCheckOut.Location = new Point(436, 173);
+            dtpCheckOut.Location = new Point(470, 162);
             dtpCheckOut.Name = "dtpCheckOut";
             dtpCheckOut.Size = new Size(125, 23);
             dtpCheckOut.TabIndex = 4;
+            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
+            dtpCheckOut.KeyUp += dtpCheckOut_KeyUp;
             // 
             // cbbCustomer
             // 
             cbbCustomer.FormattingEnabled = true;
-            cbbCustomer.Location = new Point(179, 138);
+            cbbCustomer.Location = new Point(213, 127);
             cbbCustomer.Name = "cbbCustomer";
             cbbCustomer.Size = new Size(187, 23);
             cbbCustomer.TabIndex = 1;
@@ -364,7 +418,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(77, 178);
+            label4.Location = new Point(111, 167);
             label4.Name = "label4";
             label4.Size = new Size(73, 15);
             label4.TabIndex = 21;
@@ -372,15 +426,16 @@
             // 
             // dtpRentalDate
             // 
-            dtpRentalDate.Location = new Point(179, 173);
+            dtpRentalDate.Location = new Point(213, 162);
             dtpRentalDate.Name = "dtpRentalDate";
             dtpRentalDate.Size = new Size(128, 23);
             dtpRentalDate.TabIndex = 3;
+            dtpRentalDate.ValueChanged += dtpRentalDate_ValueChanged;
             // 
             // txtDeposit
             // 
             txtDeposit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtDeposit.Location = new Point(436, 138);
+            txtDeposit.Location = new Point(470, 127);
             txtDeposit.Name = "txtDeposit";
             txtDeposit.Size = new Size(125, 23);
             txtDeposit.TabIndex = 2;
@@ -393,11 +448,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(392, 141);
+            label3.Location = new Point(416, 132);
             label3.Name = "label3";
-            label3.Size = new Size(35, 15);
+            label3.Size = new Size(50, 15);
             label3.TabIndex = 18;
-            label3.Text = "Price";
+            label3.Text = "Deposit";
             label3.Click += label3_Click;
             // 
             // label1
@@ -405,7 +460,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(76, 141);
+            label1.Location = new Point(110, 130);
             label1.Name = "label1";
             label1.Size = new Size(97, 15);
             label1.TabIndex = 16;
@@ -414,10 +469,12 @@
             // cbbRentalRoom
             // 
             cbbRentalRoom.FormattingEnabled = true;
-            cbbRentalRoom.Location = new Point(179, 107);
+            cbbRentalRoom.Location = new Point(213, 96);
             cbbRentalRoom.Name = "cbbRentalRoom";
             cbbRentalRoom.Size = new Size(382, 23);
             cbbRentalRoom.TabIndex = 0;
+            cbbRentalRoom.SelectionChangeCommitted += cbbRentalRoom_SelectionChangeCommitted;
+            cbbRentalRoom.KeyUp += cbbRentalRoom_KeyUp;
             // 
             // frmForRentalRoom
             // 
@@ -476,5 +533,9 @@
         private TextBox txtCCfee;
         private Label label9;
         private Label label10;
+        private Label label12;
+        private TextBox txttTraTienphong;
+        private Label label11;
+        private Label lblTotalprice;
     }
 }

@@ -60,7 +60,7 @@
             // rdbHiding
             // 
             rdbHiding.AutoSize = true;
-            rdbHiding.Location = new Point(355, 199);
+            rdbHiding.Location = new Point(270, 144);
             rdbHiding.Name = "rdbHiding";
             rdbHiding.Size = new Size(61, 19);
             rdbHiding.TabIndex = 5;
@@ -73,7 +73,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(171, 173);
+            label2.Location = new Point(86, 118);
             label2.Name = "label2";
             label2.Size = new Size(76, 15);
             label2.TabIndex = 3;
@@ -84,7 +84,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(171, 201);
+            label3.Location = new Point(86, 146);
             label3.Name = "label3";
             label3.Size = new Size(35, 15);
             label3.TabIndex = 6;
@@ -93,7 +93,7 @@
             // txtNameRoom
             // 
             txtNameRoom.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtNameRoom.Location = new Point(252, 170);
+            txtNameRoom.Location = new Point(167, 115);
             txtNameRoom.Name = "txtNameRoom";
             txtNameRoom.Size = new Size(215, 23);
             txtNameRoom.TabIndex = 2;
@@ -101,7 +101,7 @@
             // ckbStatus
             // 
             ckbStatus.AutoSize = true;
-            ckbStatus.Location = new Point(252, 224);
+            ckbStatus.Location = new Point(167, 169);
             ckbStatus.Name = "ckbStatus";
             ckbStatus.Size = new Size(15, 14);
             ckbStatus.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             cbbTypeRoom.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             cbbTypeRoom.FormattingEnabled = true;
-            cbbTypeRoom.Location = new Point(252, 141);
+            cbbTypeRoom.Location = new Point(167, 86);
             cbbTypeRoom.Name = "cbbTypeRoom";
             cbbTypeRoom.Size = new Size(215, 23);
             cbbTypeRoom.TabIndex = 1;
@@ -121,7 +121,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(171, 224);
+            label4.Location = new Point(86, 169);
             label4.Name = "label4";
             label4.Size = new Size(42, 15);
             label4.TabIndex = 8;
@@ -132,7 +132,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(171, 144);
+            label1.Location = new Point(86, 89);
             label1.Name = "label1";
             label1.Size = new Size(69, 15);
             label1.TabIndex = 0;
@@ -143,7 +143,7 @@
             btnConfirm.BackColor = Color.Gray;
             btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnConfirm.ForeColor = SystemColors.ControlLightLight;
-            btnConfirm.Location = new Point(248, 267);
+            btnConfirm.Location = new Point(163, 212);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(87, 23);
             btnConfirm.TabIndex = 9;
@@ -154,7 +154,7 @@
             // rdbShowing
             // 
             rdbShowing.AutoSize = true;
-            rdbShowing.Location = new Point(252, 199);
+            rdbShowing.Location = new Point(167, 144);
             rdbShowing.Name = "rdbShowing";
             rdbShowing.Size = new Size(71, 19);
             rdbShowing.TabIndex = 4;
@@ -167,7 +167,7 @@
             btnCancle.BackColor = Color.Gray;
             btnCancle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCancle.ForeColor = SystemColors.ControlLightLight;
-            btnCancle.Location = new Point(380, 267);
+            btnCancle.Location = new Point(295, 212);
             btnCancle.Name = "btnCancle";
             btnCancle.Size = new Size(87, 23);
             btnCancle.TabIndex = 10;
@@ -195,7 +195,7 @@
             grpContent.Dock = DockStyle.Fill;
             grpContent.Location = new Point(0, 0);
             grpContent.Name = "grpContent";
-            grpContent.Size = new Size(676, 428);
+            grpContent.Size = new Size(483, 291);
             grpContent.TabIndex = 13;
             grpContent.TabStop = false;
             grpContent.Enter += grpContent_Enter;
@@ -205,7 +205,7 @@
             panelLeft.Dock = DockStyle.Left;
             panelLeft.Location = new Point(3, 43);
             panelLeft.Name = "panelLeft";
-            panelLeft.Size = new Size(10, 372);
+            panelLeft.Size = new Size(10, 235);
             panelLeft.TabIndex = 12;
             // 
             // panelTop
@@ -218,15 +218,15 @@
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(3, 19);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(660, 24);
+            panelTop.Size = new Size(467, 24);
             panelTop.TabIndex = 13;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources.i2;
-            pictureBox1.Location = new Point(634, 4);
+            pictureBox1.Image = Properties.Resources.close;
+            pictureBox1.Location = new Point(441, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(20, 20);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -250,7 +250,7 @@
             ptbState.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbState.Cursor = Cursors.Hand;
             ptbState.Image = Properties.Resources.maxx;
-            ptbState.Location = new Point(1198, 7);
+            ptbState.Location = new Point(1005, 7);
             ptbState.Name = "ptbState";
             ptbState.Size = new Size(20, 20);
             ptbState.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -262,7 +262,7 @@
             ptbClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbClose.Cursor = Cursors.Hand;
             ptbClose.Image = Properties.Resources.i2;
-            ptbClose.Location = new Point(1224, 7);
+            ptbClose.Location = new Point(1031, 7);
             ptbClose.Name = "ptbClose";
             ptbClose.Size = new Size(20, 20);
             ptbClose.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -274,7 +274,7 @@
             ptbMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbMinimize.Cursor = Cursors.Hand;
             ptbMinimize.Image = Properties.Resources.min;
-            ptbMinimize.Location = new Point(1172, 7);
+            ptbMinimize.Location = new Point(979, 7);
             ptbMinimize.Name = "ptbMinimize";
             ptbMinimize.Size = new Size(20, 20);
             ptbMinimize.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -284,17 +284,17 @@
             // panelRight
             // 
             panelRight.Dock = DockStyle.Right;
-            panelRight.Location = new Point(663, 19);
+            panelRight.Location = new Point(470, 19);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(10, 396);
+            panelRight.Size = new Size(10, 259);
             panelRight.TabIndex = 11;
             // 
             // panelBottom
             // 
             panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(3, 415);
+            panelBottom.Location = new Point(3, 278);
             panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(670, 10);
+            panelBottom.Size = new Size(477, 10);
             panelBottom.TabIndex = 14;
             // 
             // frmForRoom
@@ -302,11 +302,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            ClientSize = new Size(676, 428);
+            ClientSize = new Size(483, 291);
             Controls.Add(grpContent);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmForRoom";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmForRoom";
             Load += frmForRoom_Load_1;
             grpContent.ResumeLayout(false);

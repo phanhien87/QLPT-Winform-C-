@@ -12,18 +12,20 @@ namespace Ass_prn_QLPT.ChildForm
 {
     public partial class FrmCheck_out : Form
     {
-        private string idContract,dienn,nuocc,wifii,vss,dtt,totall;
+        private string idContract, dienn, nuocc, wifii, vss, dtt, totall,upp;
         private Database db;
         private int totalmoney;
-        
-        public FrmCheck_out(string id,int accpay,string dien,string nuoc,string wifi,string vs,string total)
+        private DataTable dataTable;
+
+        public FrmCheck_out(string id, int accpay, string dien, string nuoc, string wifi, string vs, string total
+            ,string up)
         {
             InitializeComponent();
             this.dienn = dien;
             this.nuocc = nuoc;
             this.wifii = wifi;
             this.vss = vs;
-            
+            this.upp = up;
             this.totall = total;
             this.idContract = id;
             this.totalmoney = accpay;
@@ -50,22 +52,24 @@ namespace Ass_prn_QLPT.ChildForm
                     value = totalmoney.ToString()
                 }
             };
-            var dt = db.SelectData("chothopdong", list);
+            dataTable = db.SelectData("chothopdong", list);
             //txtDebit.Text = dt.Rows[0]["debit"].ToString();
-            txtDebit.Text = string.Format("{0:N0} VND", int.Parse(dt.Rows[0]["debit"].ToString()));
+            txtDebit.Text = string.Format("{0:N0} VND", int.Parse(dataTable.Rows[0]["debit"].ToString()));
+            lblDeposit.Text = string.Format("{0:N0} VND", int.Parse(dataTable.Rows[0]["DatCoc"].ToString()));
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             db = new Database();
-            if (txtPayment.Text.Trim().Length == 0)
+            if (txtPay.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Please enter payment!", "hehe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string[] debitt = txtPayment.Text.Split(' ');
+            string[] debitt = txtPay.Text.Split(' ');
             var debit = int.Parse(debitt[0].Replace(",", ""));
-            var payment = int.Parse(txtPayment.Text);
+            var payment = int.Parse(txtPay.Text);
             if (MessageBox.Show("Are you sure!", "hehe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK) ;
             {
                 if (debit > payment)
@@ -121,13 +125,18 @@ namespace Ass_prn_QLPT.ChildForm
                     new CustomerParameter()
                     {
                         key = "@paid",
-                        value = txtPayment.Text
+                        value = txtPay.Text
                     },
                     new CustomerParameter()
                     {
                         key = "@total",
                         value = totall
                     },
+                    new CustomerParameter()
+                    {
+                        key ="@up",
+                        value = upp
+                    }
 
                 };
 
@@ -155,6 +164,23 @@ namespace Ass_prn_QLPT.ChildForm
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtPayment_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            int remainder = Int32.Parse(txtPay.Text) - Int32.Parse(dataTable.Rows[0]["debit"].ToString());
+           
+            lblRemainder.Text = string.Format("{0:N0} VND", remainder.ToString());
+
+        }
+
+        private void txtPayment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

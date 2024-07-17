@@ -34,6 +34,14 @@
             btnDeleteRoom = new Button();
             label1 = new Label();
             txtSearch = new TextBox();
+            label2 = new Label();
+            lblFull = new Label();
+            label4 = new Label();
+            lblReady = new Label();
+            txtNote = new Label();
+            label5 = new Label();
+            lblTotal = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvRoom).BeginInit();
             SuspendLayout();
             // 
@@ -117,12 +125,106 @@
             txtSearch.Size = new Size(185, 23);
             txtSearch.TabIndex = 7;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label2.Location = new Point(12, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(32, 15);
+            label2.TabIndex = 8;
+            label2.Text = "Full :";
+            // 
+            // lblFull
+            // 
+            lblFull.AutoSize = true;
+            lblFull.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFull.Location = new Point(40, 42);
+            lblFull.Name = "lblFull";
+            lblFull.Size = new Size(26, 15);
+            lblFull.TabIndex = 9;
+            lblFull.Text = "Full";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(88, 42);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 15);
+            label4.TabIndex = 10;
+            label4.Text = "Ready :";
+            // 
+            // lblReady
+            // 
+            lblReady.AutoSize = true;
+            lblReady.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblReady.Location = new Point(134, 42);
+            lblReady.Name = "lblReady";
+            lblReady.Size = new Size(26, 15);
+            lblReady.TabIndex = 11;
+            lblReady.Text = "Full";
+            // 
+            // txtNote
+            // 
+            txtNote.AutoSize = true;
+            txtNote.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtNote.Location = new Point(231, 42);
+            txtNote.Name = "txtNote";
+            txtNote.Size = new Size(26, 15);
+            txtNote.TabIndex = 13;
+            txtNote.Text = "Full";
+            txtNote.Click += txtNote_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label5.Location = new Point(190, 42);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 15);
+            label5.TabIndex = 12;
+            label5.Text = "Note :";
+            // 
+            // lblTotal
+            // 
+            lblTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblTotal.Location = new Point(758, 9);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(26, 15);
+            lblTotal.TabIndex = 15;
+            lblTotal.Text = "Full";
+            lblTotal.TextAlign = ContentAlignment.TopRight;
+            lblTotal.Click += lblTotal_Click;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label6.Location = new Point(719, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(40, 15);
+            label6.TabIndex = 14;
+            label6.Text = "Total :";
+            label6.TextAlign = ContentAlignment.TopRight;
+            // 
             // frmRoom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblTotal);
+            Controls.Add(label6);
+            Controls.Add(txtNote);
+            Controls.Add(label5);
+            Controls.Add(lblReady);
+            Controls.Add(label4);
+            Controls.Add(lblFull);
+            Controls.Add(label2);
             Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(btnDeleteRoom);
@@ -147,5 +249,13 @@
         private Button btnDeleteRoom;
         private Label label1;
         private TextBox txtSearch;
+        private Label label2;
+        private Label lblFull;
+        private Label label4;
+        private Label lblReady;
+        private Label txtNote;
+        private Label label5;
+        private Label lblTotal;
+        private Label label6;
     }
 }

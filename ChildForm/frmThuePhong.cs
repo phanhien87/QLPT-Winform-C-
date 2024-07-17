@@ -79,27 +79,34 @@ namespace Ass_prn_QLPT
                     var CSN_Cu = int.Parse(dgvRentalRoom.Rows[e.RowIndex].Cells["CSN_Cu"].Value.ToString());
                     var checkout = dgvRentalRoom.Rows[e.RowIndex].Cells["txtCheckout"].Value;
                     
-                    if(checkout != null && DateTime.TryParse(checkout.ToString(), out DateTime checkouttt))
-                    {
-                        if (checkouttt <= d)
-                        {
+                    //if(checkout != null && DateTime.TryParse(checkout.ToString(), out DateTime checkouttt))
+                    //{
+                    //    if (checkouttt <= d)
+                    //    {
                             new FrmDienNuoc(idThuephong, CSD_Cu, CSN_Cu).ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("The check-out date has not yet reached!","hehe",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                        }
+                    //    }
+                    //    else
+                    //    {
+                    //        MessageBox.Show("The check-out date has not yet reached!","hehe",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    //    }
                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Failed!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    }
+                    //}
 
 
                     loadRentalRoom();
 
+                }
+                if(e.ColumnIndex == dgvRentalRoom.Columns["addMember"].Index)
+                {
+                    var idContract = dgvRentalRoom.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                    var nameRoom = dgvRentalRoom.Rows[e.RowIndex].Cells["txtNamRoom"].Value.ToString();
+
+                    new frmInforToExtend(idContract,nameRoom).ShowDialog();
                 }
 
             

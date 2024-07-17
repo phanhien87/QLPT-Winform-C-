@@ -16,6 +16,12 @@
     <Compile Update="ChildForm\frmForRoom.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChildForm\frmInforToExtend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChildForm\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChildForm\frmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,10 +40,19 @@
     <Compile Update="ChildForm\frmForRentalRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmMain.cs">
+    <Compile Update="ChildForm\History.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ChildForm\frmThuePhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChildForm\RestPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChildForm\Statistcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

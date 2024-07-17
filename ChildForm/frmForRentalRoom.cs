@@ -14,6 +14,8 @@ namespace Ass_prn_QLPT
     public partial class frmForRentalRoom : Form
     {
         private Database db;
+        DataTable data;
+        int totalPriceRoom, monthsDifference;
 
         public frmForRentalRoom()
         {
@@ -29,6 +31,8 @@ namespace Ass_prn_QLPT
         {
             loadRoomforRent();
             LoadCustomerforRent();
+            db = new Database();
+            
         }
         private void loadRoomforRent()
         {
@@ -37,6 +41,7 @@ namespace Ass_prn_QLPT
             cbbRentalRoom.DataSource = dt;
             cbbRentalRoom.DisplayMember = "Room";
             cbbRentalRoom.ValueMember = "ID";
+            cbbRentalRoom.SelectedIndex = 0;
         }
         private void LoadCustomerforRent()
         {
@@ -79,7 +84,11 @@ namespace Ass_prn_QLPT
             int en = int.Parse(txten.Text);
             int wf = int.Parse(txtWifiFee.Text);
             int ccFee = int.Parse(txtCCfee.Text);
-
+            if ( int.Parse(txttTraTienphong.Text) > totalPriceRoom)
+            {
+                MessageBox.Show("Your payment need less than required upfront payment!", "???", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var list = new List<CustomerParameter>()
             {
                 new CustomerParameter()
@@ -108,7 +117,7 @@ namespace Ass_prn_QLPT
 
             var listCustomer = new List<CustomerParameter>()
             {
-                
+
                  new CustomerParameter()
                 {
                     key="@idCustomer",
@@ -117,19 +126,19 @@ namespace Ass_prn_QLPT
 
 
             };
-            if (db.ExeCute("AddNewContract", list) <1)
+            if (db.ExeCute("AddNewContract", list) < 1)
             {
                 MessageBox.Show("Add failed!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
             db = new Database();
-            if(db.ExeCute("AddContractCustomer", listCustomer) != 1)
+            if (db.ExeCute("AddContractCustomer", listCustomer) != 1)
             {
                 MessageBox.Show("Failed Detail!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-           
+
             list = new List<CustomerParameter>()
             {
                 new CustomerParameter()
@@ -153,17 +162,21 @@ namespace Ass_prn_QLPT
                     key="@en",
                     value= en.ToString()
                 },
-               
-                
+                  new CustomerParameter()
+                  {
+                      key ="@tienphong",
+                      value = txttTraTienphong.Text.ToString()
+                  }
 
                  };
-            
+
             db = new Database();
-            if (db.ExeCute("AddNewDetailContract", list) == 1) {
+            if (db.ExeCute("AddNewDetailContract", list) == 1)
+            {
                 MessageBox.Show("Rented room successfully!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
             }
-           
+
         }
 
 
@@ -174,6 +187,61 @@ namespace Ass_prn_QLPT
 
         private void label3_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+        }
+
+        private void dtpCheckOut_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void cbbRentalRoom_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void cbbRentalRoom_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var list = new List<CustomerParameter>()
+            {
+                new CustomerParameter()
+                {
+                    key ="@idRoom",
+                    value = cbbRentalRoom.SelectedValue.ToString()
+                }
+            };
+            data = db.SelectData("RoomPrice", list);
+            monthsDifference = ((dtpCheckOut.Value.Year - dtpRentalDate.Value.Year) * 12) + dtpCheckOut.Value.Month - dtpRentalDate.Value.Month + 1;
+            totalPriceRoom = int.Parse(data.Rows[0]["DonGia"].ToString()) * monthsDifference;
+            lblTotalprice.Text = string.Format("{0:N0} VND", totalPriceRoom);
+            //MessageBox.Show(data.Rows[0]["DonGia"].ToString());
+
+        }
+
+        private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
+        {
+           
+            monthsDifference = ((dtpCheckOut.Value.Year - dtpRentalDate.Value.Year) * 12) + dtpCheckOut.Value.Month - dtpRentalDate.Value.Month + 1;
+            totalPriceRoom = int.Parse(data.Rows[0]["DonGia"].ToString()) * monthsDifference;
+            lblTotalprice.Text = string.Format("{0:N0} VND", totalPriceRoom);
+           
+
+        }
+
+        private void dtpRentalDate_ValueChanged(object sender, EventArgs e)
+        {
+            
+            monthsDifference = ((dtpCheckOut.Value.Year - dtpRentalDate.Value.Year) * 12) + dtpCheckOut.Value.Month - dtpRentalDate.Value.Month + 1;
+            totalPriceRoom = int.Parse(data.Rows[0]["DonGia"].ToString()) * monthsDifference;
+            lblTotalprice.Text = string.Format("{0:N0} VND", totalPriceRoom);
+           
 
         }
     }

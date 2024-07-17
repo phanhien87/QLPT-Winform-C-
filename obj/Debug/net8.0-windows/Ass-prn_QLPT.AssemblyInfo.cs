@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ass-prn_QLPT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a24d26b8cab41dce46e2dc73ec8d8646d7df9c71")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ass-prn_QLPT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ass-prn_QLPT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

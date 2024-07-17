@@ -45,17 +45,14 @@
             danhMụcToolStripMenuItem = new ToolStripMenuItem();
             loaiphongToolStripMenuItem = new ToolStripMenuItem();
             phongToolStripMenuItem = new ToolStripMenuItem();
-            dichvuToolStripMenuItem = new ToolStripMenuItem();
             tácVụToolStripMenuItem = new ToolStripMenuItem();
             thuêPhòngToolStripMenuItem = new ToolStripMenuItem();
             thốngKêToolStripMenuItem = new ToolStripMenuItem();
             phòngĐangThuêToolStripMenuItem = new ToolStripMenuItem();
-            phòngTrốngToolStripMenuItem = new ToolStripMenuItem();
-            tiềnToolStripMenuItem = new ToolStripMenuItem();
-            tiềnNướcToolStripMenuItem = new ToolStripMenuItem();
             doanhThuToolStripMenuItem = new ToolStripMenuItem();
             thôngTinToolStripMenuItem = new ToolStripMenuItem();
             khachHangToolStripMenuItem = new ToolStripMenuItem();
+            lịchSửToolStripMenuItem = new ToolStripMenuItem();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptbState).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbClose).BeginInit();
@@ -117,7 +114,7 @@
             // 
             ptbState.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ptbState.Cursor = Cursors.Hand;
-            ptbState.Image = Properties.Resources.maxi1;
+            ptbState.Image = Properties.Resources.maxi2;
             ptbState.Location = new Point(738, 7);
             ptbState.Name = "ptbState";
             ptbState.Size = new Size(20, 20);
@@ -183,6 +180,7 @@
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             đổiMậtKhẩuToolStripMenuItem.Size = new Size(180, 22);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
             // thoátToolStripMenuItem
             // 
@@ -196,10 +194,11 @@
             thoátToolStripMenuItem1.Name = "thoátToolStripMenuItem1";
             thoátToolStripMenuItem1.Size = new Size(180, 22);
             thoátToolStripMenuItem1.Text = "Thoát";
+            thoátToolStripMenuItem1.Click += thoátToolStripMenuItem1_Click;
             // 
             // danhMụcToolStripMenuItem
             // 
-            danhMụcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loaiphongToolStripMenuItem, phongToolStripMenuItem, dichvuToolStripMenuItem });
+            danhMụcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loaiphongToolStripMenuItem, phongToolStripMenuItem });
             danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
             danhMụcToolStripMenuItem.Size = new Size(74, 20);
             danhMụcToolStripMenuItem.Text = "Danh mục";
@@ -207,23 +206,16 @@
             // loaiphongToolStripMenuItem
             // 
             loaiphongToolStripMenuItem.Name = "loaiphongToolStripMenuItem";
-            loaiphongToolStripMenuItem.Size = new Size(180, 22);
+            loaiphongToolStripMenuItem.Size = new Size(134, 22);
             loaiphongToolStripMenuItem.Text = "Loại phòng";
             loaiphongToolStripMenuItem.Click += loaiphongToolStripMenuItem_Click;
             // 
             // phongToolStripMenuItem
             // 
             phongToolStripMenuItem.Name = "phongToolStripMenuItem";
-            phongToolStripMenuItem.Size = new Size(180, 22);
+            phongToolStripMenuItem.Size = new Size(134, 22);
             phongToolStripMenuItem.Text = "Phòng";
             phongToolStripMenuItem.Click += phongToolStripMenuItem_Click;
-            // 
-            // dichvuToolStripMenuItem
-            // 
-            dichvuToolStripMenuItem.Name = "dichvuToolStripMenuItem";
-            dichvuToolStripMenuItem.Size = new Size(180, 22);
-            dichvuToolStripMenuItem.Text = "Dịch vụ";
-            dichvuToolStripMenuItem.Click += dichvuToolStripMenuItem_Click;
             // 
             // tácVụToolStripMenuItem
             // 
@@ -241,7 +233,7 @@
             // 
             // thốngKêToolStripMenuItem
             // 
-            thốngKêToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { phòngĐangThuêToolStripMenuItem, phòngTrốngToolStripMenuItem, tiềnToolStripMenuItem, tiềnNướcToolStripMenuItem, doanhThuToolStripMenuItem });
+            thốngKêToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { phòngĐangThuêToolStripMenuItem, doanhThuToolStripMenuItem });
             thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             thốngKêToolStripMenuItem.Size = new Size(68, 20);
             thốngKêToolStripMenuItem.Text = "Thống kê";
@@ -249,36 +241,19 @@
             // phòngĐangThuêToolStripMenuItem
             // 
             phòngĐangThuêToolStripMenuItem.Name = "phòngĐangThuêToolStripMenuItem";
-            phòngĐangThuêToolStripMenuItem.Size = new Size(166, 22);
-            phòngĐangThuêToolStripMenuItem.Text = "Phòng đang thuê";
-            // 
-            // phòngTrốngToolStripMenuItem
-            // 
-            phòngTrốngToolStripMenuItem.Name = "phòngTrốngToolStripMenuItem";
-            phòngTrốngToolStripMenuItem.Size = new Size(166, 22);
-            phòngTrốngToolStripMenuItem.Text = "Phòng Trống";
-            // 
-            // tiềnToolStripMenuItem
-            // 
-            tiềnToolStripMenuItem.Name = "tiềnToolStripMenuItem";
-            tiềnToolStripMenuItem.Size = new Size(166, 22);
-            tiềnToolStripMenuItem.Text = "Tiền điện";
-            // 
-            // tiềnNướcToolStripMenuItem
-            // 
-            tiềnNướcToolStripMenuItem.Name = "tiềnNướcToolStripMenuItem";
-            tiềnNướcToolStripMenuItem.Size = new Size(166, 22);
-            tiềnNướcToolStripMenuItem.Text = "Tiền nước";
+            phòngĐangThuêToolStripMenuItem.Size = new Size(130, 22);
+            phòngĐangThuêToolStripMenuItem.Text = "Phòng";
             // 
             // doanhThuToolStripMenuItem
             // 
             doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
-            doanhThuToolStripMenuItem.Size = new Size(166, 22);
+            doanhThuToolStripMenuItem.Size = new Size(130, 22);
             doanhThuToolStripMenuItem.Text = "Doanh thu";
+            doanhThuToolStripMenuItem.Click += doanhThuToolStripMenuItem_Click;
             // 
             // thôngTinToolStripMenuItem
             // 
-            thôngTinToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { khachHangToolStripMenuItem });
+            thôngTinToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { khachHangToolStripMenuItem, lịchSửToolStripMenuItem });
             thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
             thôngTinToolStripMenuItem.Size = new Size(70, 20);
             thôngTinToolStripMenuItem.Text = "Thông tin";
@@ -289,6 +264,13 @@
             khachHangToolStripMenuItem.Size = new Size(139, 22);
             khachHangToolStripMenuItem.Text = "Khach Hang";
             khachHangToolStripMenuItem.Click += khachHangToolStripMenuItem_Click;
+            // 
+            // lịchSửToolStripMenuItem
+            // 
+            lịchSửToolStripMenuItem.Name = "lịchSửToolStripMenuItem";
+            lịchSửToolStripMenuItem.Size = new Size(139, 22);
+            lịchSửToolStripMenuItem.Text = "Lịch sử";
+            lịchSửToolStripMenuItem.Click += lịchSửToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -337,16 +319,13 @@
         private ToolStripMenuItem danhMụcToolStripMenuItem;
         private ToolStripMenuItem loaiphongToolStripMenuItem;
         private ToolStripMenuItem phongToolStripMenuItem;
-        private ToolStripMenuItem dichvuToolStripMenuItem;
         private ToolStripMenuItem tácVụToolStripMenuItem;
         private ToolStripMenuItem thuêPhòngToolStripMenuItem;
         private ToolStripMenuItem thốngKêToolStripMenuItem;
         private ToolStripMenuItem phòngĐangThuêToolStripMenuItem;
-        private ToolStripMenuItem phòngTrốngToolStripMenuItem;
-        private ToolStripMenuItem tiềnToolStripMenuItem;
-        private ToolStripMenuItem tiềnNướcToolStripMenuItem;
         private ToolStripMenuItem doanhThuToolStripMenuItem;
         private ToolStripMenuItem thôngTinToolStripMenuItem;
         private ToolStripMenuItem khachHangToolStripMenuItem;
+        private ToolStripMenuItem lịchSửToolStripMenuItem;
     }
 }

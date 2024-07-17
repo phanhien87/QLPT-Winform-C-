@@ -49,9 +49,9 @@
             Wifi = new DataGridViewTextBoxColumn();
             VS = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
-            Paid = new DataGridViewTextBoxColumn();
-            Remainder = new DataGridViewTextBoxColumn();
+            UpfrontPayment = new DataGridViewTextBoxColumn();
             btnThanhToan = new DataGridViewButtonColumn();
+            addMember = new DataGridViewButtonColumn();
             ID = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvRentalRoom).BeginInit();
             SuspendLayout();
@@ -107,7 +107,7 @@
             dgvRentalRoom.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvRentalRoom.BackgroundColor = Color.DarkGray;
             dgvRentalRoom.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRentalRoom.Columns.AddRange(new DataGridViewColumn[] { txtNamRoom, GiaPhong, txtDeposit, txtCheckin, txtCheckout, CSD_Cu, CSD_Moi, DonGiaDien, ElectricityNumber, CSN_Cu, CSN_Moi, DonGiaNuoc, SoNuoc, Wifi, VS, Total, Paid, Remainder, btnThanhToan, ID });
+            dgvRentalRoom.Columns.AddRange(new DataGridViewColumn[] { txtNamRoom, GiaPhong, txtDeposit, txtCheckin, txtCheckout, CSD_Cu, CSD_Moi, DonGiaDien, ElectricityNumber, CSN_Cu, CSN_Moi, DonGiaNuoc, SoNuoc, Wifi, VS, Total, UpfrontPayment, btnThanhToan, addMember, ID });
             dgvRentalRoom.GridColor = Color.Gray;
             dgvRentalRoom.Location = new Point(-1, 67);
             dgvRentalRoom.MultiSelect = false;
@@ -231,19 +231,12 @@
             Total.Name = "Total";
             Total.ReadOnly = true;
             // 
-            // Paid
+            // UpfrontPayment
             // 
-            Paid.DataPropertyName = "DaThanhToan";
-            Paid.HeaderText = "Paid";
-            Paid.Name = "Paid";
-            Paid.ReadOnly = true;
-            // 
-            // Remainder
-            // 
-            Remainder.DataPropertyName = "Remainder";
-            Remainder.HeaderText = "Remainder";
-            Remainder.Name = "Remainder";
-            Remainder.ReadOnly = true;
+            UpfrontPayment.DataPropertyName = "TienTraPhongTrc";
+            UpfrontPayment.HeaderText = "UpfrontPayment";
+            UpfrontPayment.Name = "UpfrontPayment";
+            UpfrontPayment.ReadOnly = true;
             // 
             // btnThanhToan
             // 
@@ -252,6 +245,16 @@
             btnThanhToan.ReadOnly = true;
             btnThanhToan.Text = "Payment";
             btnThanhToan.UseColumnTextForButtonValue = true;
+            // 
+            // addMember
+            // 
+            addMember.HeaderText = "##";
+            addMember.Name = "addMember";
+            addMember.ReadOnly = true;
+            addMember.Resizable = DataGridViewTriState.True;
+            addMember.SortMode = DataGridViewColumnSortMode.Automatic;
+            addMember.Text = "Member";
+            addMember.UseColumnTextForButtonValue = true;
             // 
             // ID
             // 
@@ -304,9 +307,9 @@
         private DataGridViewTextBoxColumn Wifi;
         private DataGridViewTextBoxColumn VS;
         private DataGridViewTextBoxColumn Total;
-        private DataGridViewTextBoxColumn Paid;
-        private DataGridViewTextBoxColumn Remainder;
+        private DataGridViewTextBoxColumn UpfrontPayment;
         private DataGridViewButtonColumn btnThanhToan;
+        private DataGridViewButtonColumn addMember;
         private DataGridViewTextBoxColumn ID;
     }
 }

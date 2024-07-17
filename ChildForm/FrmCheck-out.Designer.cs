@@ -41,9 +41,13 @@
             panelRight = new Panel();
             panelBottom = new Panel();
             groupBox1 = new GroupBox();
+            lblDeposit = new Label();
+            label4 = new Label();
+            lblRemainder = new Label();
+            label6 = new Label();
             btnCancel = new Button();
             btnConfirm = new Button();
-            txtPayment = new TextBox();
+            txtPay = new TextBox();
             label2 = new Label();
             txtDebit = new TextBox();
             label1 = new Label();
@@ -75,7 +79,7 @@
             panelLeft.Dock = DockStyle.Left;
             panelLeft.Location = new Point(0, 24);
             panelLeft.Name = "panelLeft";
-            panelLeft.Size = new Size(10, 219);
+            panelLeft.Size = new Size(10, 263);
             panelLeft.TabIndex = 16;
             // 
             // panelTop
@@ -183,38 +187,86 @@
             panelRight.Dock = DockStyle.Right;
             panelRight.Location = new Point(507, 0);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(10, 243);
+            panelRight.Size = new Size(10, 287);
             panelRight.TabIndex = 15;
             // 
             // panelBottom
             // 
             panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(0, 243);
+            panelBottom.Location = new Point(0, 287);
             panelBottom.Name = "panelBottom";
             panelBottom.Size = new Size(517, 10);
             panelBottom.TabIndex = 18;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblDeposit);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(lblRemainder);
+            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(btnCancel);
             groupBox1.Controls.Add(btnConfirm);
-            groupBox1.Controls.Add(txtPayment);
+            groupBox1.Controls.Add(txtPay);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(txtDebit);
             groupBox1.Controls.Add(label1);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(10, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(497, 219);
+            groupBox1.Size = new Size(497, 263);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
+            // 
+            // lblDeposit
+            // 
+            lblDeposit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblDeposit.ForeColor = SystemColors.ControlLightLight;
+            lblDeposit.Location = new Point(261, 47);
+            lblDeposit.Name = "lblDeposit";
+            lblDeposit.Size = new Size(128, 15);
+            lblDeposit.TabIndex = 25;
+            lblDeposit.Text = "0";
+            lblDeposit.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(91, 47);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 15);
+            label4.TabIndex = 24;
+            label4.Text = "Deposit";
+            // 
+            // lblRemainder
+            // 
+            lblRemainder.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblRemainder.ForeColor = SystemColors.ControlLightLight;
+            lblRemainder.Location = new Point(261, 164);
+            lblRemainder.Name = "lblRemainder";
+            lblRemainder.Size = new Size(128, 15);
+            lblRemainder.TabIndex = 23;
+            lblRemainder.Text = "0";
+            lblRemainder.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.ControlLightLight;
+            label6.Location = new Point(91, 164);
+            label6.Name = "label6";
+            label6.Size = new Size(68, 15);
+            label6.TabIndex = 22;
+            label6.Text = "Remainder";
             // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.Gray;
             btnCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCancel.ForeColor = SystemColors.ControlLightLight;
-            btnCancel.Location = new Point(314, 146);
+            btnCancel.Location = new Point(314, 200);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 9;
@@ -227,7 +279,7 @@
             btnConfirm.BackColor = Color.Gray;
             btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnConfirm.ForeColor = SystemColors.ControlLightLight;
-            btnConfirm.Location = new Point(233, 146);
+            btnConfirm.Location = new Point(233, 200);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(75, 23);
             btnConfirm.TabIndex = 8;
@@ -235,20 +287,22 @@
             btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
-            // txtPayment
+            // txtPay
             // 
-            txtPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtPayment.Location = new Point(222, 105);
-            txtPayment.Name = "txtPayment";
-            txtPayment.Size = new Size(167, 23);
-            txtPayment.TabIndex = 7;
+            txtPay.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtPay.Location = new Point(222, 124);
+            txtPay.Name = "txtPay";
+            txtPay.Size = new Size(167, 23);
+            txtPay.TabIndex = 7;
+            txtPay.KeyPress += txtPayment_KeyPress;
+            txtPay.KeyUp += txtPayment_KeyUp;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(91, 108);
+            label2.Location = new Point(91, 127);
             label2.Name = "label2";
             label2.Size = new Size(56, 15);
             label2.TabIndex = 6;
@@ -258,7 +312,7 @@
             // txtDebit
             // 
             txtDebit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtDebit.Location = new Point(222, 61);
+            txtDebit.Location = new Point(222, 80);
             txtDebit.Name = "txtDebit";
             txtDebit.Size = new Size(167, 23);
             txtDebit.TabIndex = 5;
@@ -268,7 +322,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(91, 64);
+            label1.Location = new Point(91, 83);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
             label1.TabIndex = 4;
@@ -279,7 +333,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            ClientSize = new Size(517, 253);
+            ClientSize = new Size(517, 297);
             Controls.Add(groupBox1);
             Controls.Add(panelLeft);
             Controls.Add(panelTop);
@@ -322,9 +376,13 @@
         private GroupBox groupBox1;
         private Label label1;
         private Button btnConfirm;
-        private TextBox txtPayment;
+        private TextBox txtPay;
         private Label label2;
         private TextBox txtDebit;
         private Button btnCancel;
+        private Label lblRemainder;
+        private Label label6;
+        private Label lblDeposit;
+        private Label label4;
     }
 }
